@@ -30,7 +30,7 @@ public class UploadClient {
             int index = rawFileName.lastIndexOf('.');
             if (index > 0) fileExtension = rawFileName.substring(index + 1);
             if (!(fileExtension.matches("(?i)png|jpeg|jpg|gif"))) {
-                throw new IncorrectFileTypeException("Can only upload png/jpeg/jpg/gif images");
+                throw new IncorrectFileTypeException("Only png/jpg/jpeg/gif image files allowed.");
             }
         } catch (IncorrectFileTypeException e) {
             System.out.println("Exception caught - " + e);
@@ -81,7 +81,7 @@ public class UploadClient {
     
     
                 //Get the return from the server as a listing of all images
-                System.out.println("Getting reply from server...\n");
+                System.out.println("Awaiting server..\n");
                 String filename = "";
                 while ((filename = in.readLine()) != null) {
                     listing += filename;

@@ -41,7 +41,7 @@ public class FileUploadServlet {
 
     public String uploadFile() {
         
-        System.out.println("Uploading");
+        System.out.println("Uploading file..");
 
         String uploadData = getUploadData();
 
@@ -54,7 +54,7 @@ public class FileUploadServlet {
             out.writeBytes("POST /midp/upload HTTP/1.0");
             out.writeBytes("\r\n");
 
-            out.writeBytes("Host: localhost:8081");
+            out.writeBytes("Host: localhost:8999");
             out.writeBytes("\r\n");
 
             out.writeBytes("Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryD9JJQuX4ZDbHlYQy");
